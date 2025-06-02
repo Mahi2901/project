@@ -1,0 +1,86 @@
+<!-- <app-first [myName]="nameFromParent" ></app-first> -->
+<!-- <button type="button" class="btn btn-danger"> <i class="bi bi-box-arrow-down-left"></i>Danger</button> -->
+
+
+<form class="detailForm">
+  <label>Name:</label>
+  <input [(ngModel)]="namee" name="namee" />
+  <!-- two data binding use [(ngModel)]="namee" name="namee" name attribute want use for two data binding  -->
+
+  <label>Age:</label>
+  <input [(ngModel)]="age" name="age" type="number" />
+
+  <label>Department:</label>
+  <input [(ngModel)]="deparment" name="deparment" />
+
+  <button type="submit" class="detailForm-submit" (click)="formSubmitted()">
+    Submit
+  </button>
+</form>
+
+<table style="width: 30%">
+  <thead>
+    <tr>
+      <th>S.NO</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  
+<tbody>
+  <tr *ngFor="let item of submittedData ; let i = index">
+    <td>{{ item.serialNumber }}</td>
+    <td>{{ item.namee }}</td>
+    <td>{{ item.age }}</td>
+    <td>{{ item.deparment }}</td>  
+    <button (click)="editTheRow(i)">Edit</button>
+    <button (click)="deleteTheRow(i)">Delete</button>
+
+  </tr>
+</tbody>
+</table>
+
+
+<button>click to send data to parent</button>
+
+
+<!-- [ngSwitch] = "" -->
+
+<div [ngSwitch]=" ">
+  <!-- if day = 'Sunday' 🛌restday will shown in template View  -->
+  <div *ngSwitchCase="'Sunday'">🛌 Rest Day</div>  
+  <!-- if day = 'Monday' 🧑‍💻Work Day will shown in template View  -->
+  <div *ngSwitchCase="'Monday'">🧑‍💻 Work Day</div>
+  <!-- if day = '' 📅Normalday will shown in template View  -->
+  <div *ngSwitchDefault>📅 Normal Day</div>
+</div>
+
+
+<!-- *ngFor="let X of Y" -->
+
+<div *ngFor="let item of items">
+  <p>current element of item {{ item }}</p>
+</div>
+
+
+<!-- *ngIf="isHappy" if isHappy = true ; it will show in the template view  -->
+
+<div *ngIf="isHappy">😊 I am happy!</div>
+
+
+
+<div [ngClass]="{ 'hot': isHot, 'cold': !isHot }">🌤️ Weather</div>
+
+
+<!-- we can style inline through the [ngStyle] = "{}"-->
+
+<div [ngStyle]="{ 'color': isHappy ? 'green' : 'red', 'background-color':'yellow' , 'width': '30'}">
+  Mood Text
+</div>
+
+
+
+
+
+

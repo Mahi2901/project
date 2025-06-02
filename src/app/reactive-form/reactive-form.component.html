@@ -1,0 +1,12 @@
+<form   [formGroup]=" myForm" class="detailForm">
+  <label>Name:</label>
+  <input [(ngModel)]="namee" name="namee"  FormControlName="name" />
+  <!-- two data binding use [(ngModel)]="namee" name="namee" name attribute want use for two data binding  -->
+  <label>Age:</label>
+  <input [(ngModel)]="age" name="age" type="number" />
+  <label>Department:</label>
+  <input [(ngModel)]="deparment" name="deparment" />
+  <button type="submit" class="detailForm-submit" (click)="formSubmitted()">
+    Submit
+  </button>
+</form>

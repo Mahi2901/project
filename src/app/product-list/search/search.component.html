@@ -1,0 +1,16 @@
+
+<p>{{gettingTheData}}</p>
+
+<div class="ekart--search--product"> 
+
+<input class="ekart-search-product-input" [value]="searchText" (input)="searchupdate($event)">  
+<!-- twodatabinding using (input)="searchupdate($event) input event  if input happen means function will call automatically -->
+<button class="btn btn-search">Search</button> 
+
+</div> 
+
+<div class="ekart-search-result-for">
+    <p><strong>Search result for:  </strong>{{  searchText}}</p>
+</div> 
+<!-- <div class="ekart-product-container-header"><h2>SHOES</h2></div> 
+<div class="ekart--products--container">  -->   
