@@ -1,12 +1,113 @@
-<form   [formGroup]=" myForm" class="detailForm">
-  <label>Name:</label>
-  <input [(ngModel)]="namee" name="namee"  FormControlName="name" />
-  <!-- two data binding use [(ngModel)]="namee" name="namee" name attribute want use for two data binding  -->
-  <label>Age:</label>
-  <input [(ngModel)]="age" name="age" type="number" />
-  <label>Department:</label>
-  <input [(ngModel)]="deparment" name="deparment" />
-  <button type="submit" class="detailForm-submit" (click)="formSubmitted()">
-    Submit
-  </button>
+<form  class="detailForm" 
+      [formGroup]=" myForm"
+      (ngSubmit)="onSubmit()" >
+  <div class="form-input">
+    <label>Name:</label>
+    <input type="text" formControlName="name" />
+    <span *ngIf="
+                !myForm.get('name')?.valid && myForm.get('name')?.touched">* Name is Required</span>
+  </div>
+  <div class="form-input">
+    <label>Age:</label>
+    <input  type="number" formControlName="age"/>
+    <span *ngIf="
+                !myForm.get('age')?.valid && myForm.get('age')?.touched">* age is Required</span>
+  </div>
+  <div class="form-input">
+    <label>Department:</label>
+    <input type="text" formControlName="deparment" />
+    <span *ngIf="
+                !myForm.get('deparment')?.valid && myForm.get('deparment')?.touched">* Department is Required</span>
+  </div>
+  <div class="form-input">
+    <label>Phone Number:</label>
+    <input  type="number" formControlName="phoneNumber"/>
+    <span *ngIf="
+                !myForm.get('phoneNumber')?.valid && myForm.get('phoneNumber')?.touched">* Phone Number is Required</span>
+  </div >
+  <div class="form-input">
+    <label>E-mail:</label>
+    <input  type="email" formControlName="email"/>
+     <span *ngIf="
+                !myForm.get('email')?.valid && myForm.get('email')?.touched">* E-mail is Required</span>
+  </div>
+  <div class="form-input">
+    <label>Password:</label>
+    <input  type="text" formControlName="passWord"/>
+     <span *ngIf="
+                !myForm.get('passWord')?.valid && myForm.get('passWord')?.touched">* password is Required</span>
+  </div>
+  <div class="form-input">
+    <label>Confirm Password:</label>
+    <input  type="text" formControlName="ConfirmPassWord"/>
+     <span *ngIf="
+                !myForm.get('ConfirmPassWord')?.valid && myForm.get('ConfirmPassWord')?.touched">* password is Required</span>
+  </div>
+  <div class="form-input">
+    <button type="submit" 
+            class="detailForm-submit" 
+            [disabled]="!myForm.valid">
+      Submit
+    </button>
+  </div>
 </form>
+
+<hr/>
+
+
+<table>
+  <thead><tr>
+    <th>S.No</th>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Department</th>
+    <th>Phone Number</th>
+    <th>E-Mail</th>
+    <th>Password</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let deatil of submittedData ; let i =index">
+    <tr >
+      <td>{{deatil.serialNumber}}</td>
+      <td>{{deatil.name}}</td>
+      <td>{{deatil.age}}</td>
+      <td>{{deatil.deparment}}</td>
+      <td>{{deatil.phoneNumber}}</td>
+      <td>{{deatil.email}}</td>
+      <td>{{deatil.passWord}}</td>
+      <button (click)=" editTheRow(i)">Edit</button>
+      <button (click)="deleteTheRow(i)">Delete</button>
+    </tr>
+  </tbody>
+</table>
+
+<hr/>
+
+<div *ngFor="let user of users">
+  <p>{{user.id}}</p>
+  <p>{{user.name}}</p>
+  <p>{{user.age}}</p>
+  <p>{{user.department}}</p>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>User Name</th>
+      <th>country</th>
+      <th>Hello</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of tableData">
+      <td>{{item?.id}}</td>
+      <td>{{item?.name}}</td>
+      <td>{{item?.email}}</td>
+      <td>{{item?.username}}</td>
+      <td>{{item?.country}}</td>
+    </tr>
+  </tbody>
+</table>
