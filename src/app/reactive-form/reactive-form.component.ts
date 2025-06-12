@@ -5,7 +5,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgFor, NgIf, NgClass, NgStyle } from '@angular/common';
-import { CustomerDataService, } from '../service/customer-data.service';
+import { CustomerDataService } from '../service/customer-data.service';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({
@@ -18,13 +18,12 @@ export class ReactiveFormComponent implements OnInit {
   public tableData: any = [];
   myForm!: FormGroup;
 
-  constructor(private customerData: CustomerDataService) {
-    this.users = customerData.getData();
-  }
+  constructor(private customerData: CustomerDataService) {}
 
   ngOnInit() {
     this.initForm();
     this.getApiData();
+    this.getingTheApiData();
   }
 
   initForm() {
@@ -45,6 +44,13 @@ export class ReactiveFormComponent implements OnInit {
   public submittedData: any[] = [];
 
   public serialNumber: number = 1;
+
+  sendingTheData(newData: any) {
+    this.customerData.sendTheReactiveFormData(newData).subscribe((data) => {
+      console.log(data);
+    });
+  }
+
   onSubmit() {
     const formValues = this.myForm.value;
 
@@ -60,6 +66,8 @@ export class ReactiveFormComponent implements OnInit {
     };
 
     this.submittedData.push(newDetail);
+
+    this.sendingTheData(newDetail);
 
     this.myForm.reset();
   }
@@ -77,6 +85,7 @@ export class ReactiveFormComponent implements OnInit {
       passWord: item.passWord,
       ConfirmPassWord: item.ConfirmPassWord,
     });
+
     this.editingIndex = index;
   }
 
@@ -90,6 +99,31 @@ export class ReactiveFormComponent implements OnInit {
     this.customerData.getDetails().subscribe((res: any) => {
       console.log(res);
       this.tableData = res;
+    });
+  }
+  getingTheApiData() {
+    this.customerData.getTheDetails().subscribe((data: any) => {
+      console.log(data);
+    });
+  }
+
+  onSend() {
+    const sample = {
+      id: 3,
+      name: 'logesh',
+    };
+    this.customerData.postData(sample).subscribe((res: any) => {
+      console.log(res);
+    });
+  }
+
+  sendTo() {
+    const userData = {
+      id: 4,
+      Name: 'Jeeva',
+    };
+    this.customerData.sendTheData(userData).subscribe((data: any) => {
+      console.log(data);
     });
   }
 }

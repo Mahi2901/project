@@ -8,7 +8,56 @@
 <app-product-list></app-product-list> -->
 
 <!-- <app-reactive-form ngSkipHydration></app-reactive-form> -->
- <a routerLink="/first">First</a>
+<a routerLink="/second">second</a>
+<br>
+<a routerLink="/first">First</a>
+<br>
+<button [routerLink]="['/first' ]" mat-raised-button color="secondary">First component</button>
+<button [routerLink]="['/second']" mat-raised-button color="secondary">Second component</button>
+<button [routerLink]="['/navbar']" mat-raised-button color="secondary">NavBar Component</button>
+<button [routerLink]="['/productlist']" mat-raised-button color="secondary">ProductList</button>
+<button [routerLink]="['/Product']" mat-raised-button color="secondary">Reactive Form </button>
+
 <router-outlet></router-outlet>
+
+
+<mat-tab-group>
+  <mat-tab label="First" > Content 1 </mat-tab>
+  <mat-tab label="Second"> Content 2 </mat-tab>
+  <mat-tab label="Third"> Content 3 </mat-tab>
+</mat-tab-group>
+
+<button class="btn btn-primary">Click Me</button>
+
+<br>
+<br>
+
+<button class="btn btn-primary">Click to go down 
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+</svg>
+</button>
+<div>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+</svg>
+<input type="text">
+
+</div>
+
+<div style="display: inline-flex; align-items: center; gap: 8px;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z"/>
+  </svg>
+  <span style="font-size: 1.25rem; font-weight: 600;">INDIAN BANK</span>
+</div>
+
+
+
+
+<!-- <router-outlet  ></router-outlet> -->
+
+
+
 
 

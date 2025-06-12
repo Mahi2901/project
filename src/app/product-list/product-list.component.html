@@ -36,17 +36,47 @@
   </div> -->
 
 
-  <div class="entire-Product-container">
+  <!-- <div class="entire-Product-container">
     <div  *ngFor="let prod of products" class = "product-container">
         <div>{{prod.brand}}</div>
-        <img src=" prod.imageURL " alt="product-Image" class="product-container-img"> 
         <div>{{prod.price |currency : 'INR'}}</div> 
         <div>{{prod.name}}</div>
         <div>{{prod.description}}</div>
         <div>{{prod.size}} Size Available</div>
         <div>{{prod.color}} Color Available</div>
     </div>  
-  </div>
+  </div> -->
+
+
+
+<div class="entire-product-container" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+  <mat-card *ngFor="let prod of products" class="product-card" appearance="outlined" style="width: 300px;">
+    <mat-card-header>
+      <div mat-card-avatar class="product-avatar"></div>
+      <mat-card-title>{{ prod.name }}</mat-card-title>
+      <mat-card-subtitle>{{ prod.brand }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <!-- Optional: Replace with actual product image -->
+    <img mat-card-image src="https://via.placeholder.com/300x180?text={{prod.name}}" alt="{{prod.name}}">
+
+    <mat-card-content>
+      <p><strong>Description:</strong> {{ prod.description }}</p>
+      <p><strong>Size:</strong> {{ prod.size }}</p>
+      <p><strong>Color:</strong> {{ prod.color }}</p>
+      <p><strong>Price:</strong> {{ prod.price | currency:'INR' }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button color="primary">BUY</button>
+      <button mat-button color="accent">DETAILS</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+
 
 
 <p>Current Date: {{ name | customPipe }}</p>

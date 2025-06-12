@@ -2,6 +2,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf, NgClass, NgStyle } from '@angular/common';
 import { CommonModule } from '@angular/common';
+import { ClientDetailsService} from '../service/Client-details.service';
+import { ClientDetailsService } from '../service/client-details.service';
 
 
 @Component({
@@ -11,6 +13,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './second.component.scss',
 })
 export class SecondComponent {
+
+constructor (private clientData : ClientDetailsService) {}
+
   public nameFromParent = 'Maheshwaran'; // This will be passed to FirstComponent as an input property
   
   public isHot : any = false ;
@@ -73,4 +78,9 @@ export class SecondComponent {
     this.submittedData.splice(index, 1);
 
   }
+
+
+
+
+
 }

@@ -1,0 +1,101 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Mahesh",
+      "age": 25
+    },
+    {
+      "id": "2",
+      "name": "Karthik",
+      "age": 30
+    },
+    {
+      "id": "4",
+      "Name": "Jeeva"
+    },
+    {
+      "id": "4",
+      "Name": "Jeeva"
+    },
+    {
+      "id": "3",
+      "name": "logesh"
+    },
+    {
+      "id": "4",
+      "Name": "Jeeva"
+    },
+    {
+      "id": "70f7",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "4ec1",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "4",
+      "Name": "Jeeva"
+    },
+    {
+      "id": "84b7",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "71fb",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "0645",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "b027",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "2b12",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "54a8",
+      "serialNumber": 1,
+      "name": "Maheshwaran K",
+      "age": 12,
+      "deparment": "Mechanical",
+      "phoneNumber": 6374474749,
+      "email": "maheshlogesh03@gmail.com",
+      "passWord": "Mahi2901",
+      "ConfirmPassWord": "Mahi2901"
+    },
+    {
+      "id": "0c08",
+      "serialNumber": 1,
+      "name": "Logeshwwaran",
+      "age": 23,
+      "deparment": "IT",
+      "phoneNumber": 9878224373,
+      "email": "logesh02@gmail.com",
+      "passWord": "logu3471",
+      "ConfirmPassWord": "logu3471"
+    },
+    {
+      "id": "de21",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    },
+    {
+      "id": "e6d9",
+      "Id": "2",
+      "Name": "Maheshwaran"
+    }
+  ]
+}

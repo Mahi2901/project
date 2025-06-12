@@ -3,10 +3,13 @@ import { SearchComponent } from './search/search.component'
 import { CommonModule } from '@angular/common';
 import { NgFor, NgIf, NgClass, NgStyle } from '@angular/common';
 import { CustomPipePipe } from "../custom-pipe.pipe";
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-product-list',
-  imports: [CommonModule, CustomPipePipe, SearchComponent],
+  imports: [CommonModule, CustomPipePipe, SearchComponent,MatCardModule,MatButtonModule,MatIconModule ],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.scss',
 })
@@ -52,7 +55,7 @@ public  products = [
     price: 160,
     is_in_inventory: true,
     itemsleft: 3,
-    imageURL: 'C:\Users\kalai\OneDrive\Desktop\addidasimage.avif'
+    imageURL: ''
   },
   {
     id: 2,
@@ -66,7 +69,6 @@ public  products = [
     price: 180,
     is_in_inventory: true,
     itemsleft: 7,
-    imageURL: "https://assets.adidas.com/images/w_600,f_auto,q_auto/Ultraboost_22_Shoes_Pink_HQ1421_01_standard.jpg",
     slug: "adidas-ultraboost-22"
   },
   {
@@ -81,7 +83,6 @@ public  products = [
     price: 110,
     is_in_inventory: true,
     itemsleft: 5,
-    imageURL: "https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/391174/01/sv01/fnd/IND/w/1000/h/1000/fmt/png",
     slug: "puma-rsx-efekt"
   },
   {
@@ -96,7 +97,6 @@ public  products = [
     price: 130,
     is_in_inventory: true,
     itemsleft: 2,
-    imageURL: "https://assets.reebok.com/images/w_600,f_auto,q_auto/Nano_X3_Shoes_Grey_HQ1401_01_standard.jpg",
     slug: "reebok-nano-x3"
   },
   {
@@ -111,7 +111,6 @@ public  products = [
     price: 160,
     is_in_inventory: true,
     itemsleft: 8,
-    imageURL: "https://nb.scene7.com/is/image/NB/w1080b12_nb_02_i?$pdpflexf2$&wid=440&hei=440",
     slug: "new-balance-fresh-foam-1080v12"
   },
   {
@@ -126,7 +125,6 @@ public  products = [
     price: 170,
     is_in_inventory: true,
     itemsleft: 4,
-    imageURL: "https://cdn.asics.com/product_images/Gel-Kayano-30_Men_Black_1011B548_001_main.jpg",
     slug: "asics-gel-kayano-30"
   },
   {
@@ -141,7 +139,6 @@ public  products = [
     price: 60,
     is_in_inventory: true,
     itemsleft: 12,
-    imageURL: "https://www.converse.com/on/demandware.static/-/Sites/default/dw2efc0c5a/images/a_107/162050C_A_107X1.jpg",
     slug: "converse-chuck-taylor-all-star"
   },
   {
@@ -156,8 +153,6 @@ public  products = [
     price: 130,
     is_in_inventory: true,
     itemsleft: 6,
-    imageURL: "https://static.nike.com/a/images/t_default/f65f0c10-0747-403c-b70d-027e364f4e2e/air-zoom-pegasus-39-road-running-shoes-FjJh7b.png",
-    slug: "nike-air-zoom-pegasus-39"
   },
   {
     id: 9,
@@ -171,7 +166,6 @@ public  products = [
     price: 75,
     is_in_inventory: true,
     itemsleft: 9,
-    imageURL: "https://underarmour.scene7.com/is/image/Underarmour/3021952-001_DEFAULT",
     slug: "under-armour-charged-assert-9"
   },
   {
@@ -186,7 +180,6 @@ public  products = [
     price: 65,
     is_in_inventory: true,
     itemsleft: 10,
-    imageURL: "https://images.vans.com/is/image/Vans/VN000D3HY28-HERO?$PDP-FULL-IMAGE$",
     slug: "vans-old-skool"
   },
   {
@@ -201,7 +194,6 @@ public  products = [
     price: 85,
     is_in_inventory: true,
     itemsleft: 11,
-    imageURL: "https://skechers.scene7.com/is/image/Skechers/124523_NVY",
     slug: "skechers-go-walk-6"
   },
   {
@@ -216,7 +208,6 @@ public  products = [
     price: 180,
     is_in_inventory: true,
     itemsleft: 7,
-    imageURL: "https://assets.adidas.com/images/w_600,f_auto,q_auto/Ultraboost_22_Shoes_Pink_HQ1421_01_standard.jpg",
     slug: "adidas-ultraboost-22"
   }
 ];
