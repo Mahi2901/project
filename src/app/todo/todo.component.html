@@ -1,0 +1,44 @@
+<div class="todo-container">
+  <div >
+    <h6 class="heading">Todo App</h6>
+  </div>
+  <div class="input-group mb-3 input-container">
+    <div class="input-group-prepend">
+      <input type="text" [(ngModel)]="inputvalue" />
+    </div>
+    <button
+      (click)="addValueInTable()"
+      class="btn rounded-circle addButton add-btn"
+    >
+      +
+    </button>
+  </div>
+  <!-- <table class="table">
+    <tbody *ngFor="let value of allValues; let i = index" >
+      <tr scope="row" class="txt-align table-container">
+        <td >
+          {{ value }}
+        </td>
+        <td class="btn-align"><button
+              (click)="deleteTheRow(i)"
+              class="btn btn-sm btn-danger ms-2"
+            >
+              <i class="fa-solid fa-trash deleteButton"></i></button
+          ></td>
+      </tr>
+    </tbody>
+  </table> -->
+
+
+<div class="task-list">
+  <div class="task-row" *ngFor="let value of allValues; let i = index">
+    <span>{{ value }}</span>
+    <button (click)="deleteTheRow(i)" class="btn btn-light" ><i class="fa-solid fa-trash deleteButton"></i></button>
+  </div>
+</div>
+
+
+
+
+</div>
+<hr />

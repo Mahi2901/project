@@ -1,0 +1,128 @@
+
+
+<nav class="p-3 mb-2 bg-body-tertiary heading-container">
+  <div class="container-fluid heading">
+      Client Project Tracker
+  </div>
+</nav>
+<div class="form-table-container p-3 mb-2 bg-info-subtle text-info-emphasis">
+<div class="form-container">
+  <form [formGroup]="clientForm" (ngSubmit)="createNewClient()" >
+    <!-- Client Name -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Client Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control"  formControlName="ClientName"/>
+      </div>
+    </div>
+
+    <!-- Project Name -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Project Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" formControlName="ProjectName" />
+      </div>
+    </div>
+
+    <!-- Start Date -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Start Date</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" formControlName="StartDate" />
+      </div>
+    </div>
+
+    <!-- End Date -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">End Date</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" formControlName="EndDate" />
+      </div>
+    </div>
+
+    <!-- Developer -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Developer</label>
+      <div class="col-sm-10">
+        <select class="form-select" formControlName="Developer">
+          <option selected>Select Developer</option>
+          <option value="Developer1">Developer 1</option>
+          <option value="Developer2">Developer 2</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Status</label>
+      <div class="col-sm-10">
+        <select class="form-select" formControlName="Status">
+          <option value="New" name="New">New</option>
+          <option value="In Progress" name="InProgress">In Progress</option>
+          <option value="Completed" name="Completed">Completed</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Priority (Radio Buttons) -->
+    <div class="mb-3 row">
+      <label class="col-sm-2 col-form-label">Priority</label>
+      <div class="col-sm-10" >
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="Priority" id="priorityHigh" value="High" checked formControlName="Priority"/>
+          <label class="form-check-label" for="priorityHigh">High</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="Priority" id="priorityMedium" value="Medium" formControlName="Priority"/>
+          <label class="form-check-label" for="priorityMedium">Medium</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="Priority" id="priorityLow" value="Low" formControlName="Priority"/>
+          <label class="form-check-label" for="priorityLow">Low</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="mb-3 row">
+      <div class="offset-sm-2 col-sm-10">
+        <button type="submit" class="btn btn-primary">Add Project</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+
+<div class="table-container">
+  <table  class="table table-bordered">
+    <thead>
+      <tr>
+        <td>UD</td>
+        <td>Client Name</td>
+        <td>Project Name</td>
+        <td>Start Date</td>
+        <td>End Date</td>
+        <td>Developer</td>
+        <td>Status</td>
+        <td>Priority</td>
+      </tr>
+    </thead>
+    <tbody *ngFor="let Client of clientData ; let i = index">
+      <tr>
+        <td>{{i + 1}}</td>
+        <td>{{Client.ClientName}}</td>
+        <td>{{Client.projectName}}</td>
+        <td>{{Client.StartDate}}</td>
+        <td>{{Client.EndDate}}</td>
+        <td>{{Client.Developer}}</td>
+        <td>`{{Client.Status}}</td>
+        <td>{{Client.Priority}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+<!-- {{name1}} -->

@@ -1,0 +1,82 @@
+<hr />
+
+<div class="card text-white bg-primary mb-3 task-heading card-header">
+  <h1>Task Assigning</h1>
+</div>
+<form
+  [formGroup]="myForm"
+  class="form-Container card-body"
+  (ngSubmit)="taskDeatilsSumbit()"
+>
+  <div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"> Task Name:</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="taskname"
+          formControlName="taskname"
+        />
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"> Task Description :</label>
+      <div class="col-sm-10">
+        <input
+          type="text"
+          class="form-control"
+          id="taskdescription"
+          formControlName="taskdescription"
+        />
+      </div>
+    </div>
+    <div>
+      <label class="form-check-label" for="defaultCheck1">Task Done </label>
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="defaultCheck1"
+        formControlName="taskdone"
+      />
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+  </div>
+</form>
+
+<hr />
+
+<table class="table table-striped table-container">
+  <thead>
+    <tr class="bg-success">
+      <th>S.No</th>
+      <th>Task Name</th>
+      <th>Task Description</th>
+      <th>Task Done</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let task of taskEntireDetail">
+    <tr>
+      <td scope="row">{{ task.serialNumber }}</td>
+      <td>{{ task.taskName }}</td>
+      <td>{{ task.taskdescription }}</td>
+      <td>
+        <span *ngIf="task.taskcompleted; else TasknotDone">
+         <i class="bi bi-check-circle-fill text-success"></i>
+        </span>
+        <ng-template #TasknotDone>
+          <i class="bi bi-x-circle-fill text-danger"></i>
+        </ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="toggleListView()"class="btn2 btn btn-secondary">
+  {{ showCompletedTask ? "Hide The completed" : "Show The completed" }}
+</button>
+
+

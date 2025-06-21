@@ -1,0 +1,93 @@
+<div class="header">
+  <h6 class="header-txt">Angular with Nodejs</h6>
+</div>
+<div class="wrapper">
+    <form [formGroup]="myForm1" (ngSubmit)="createUser()" class="custom-form">
+    <div class="input-container">
+      <h6 class="header-txt-user">Create User</h6>
+      <div class="row">
+        <div class="row">
+          <div class="col-md-6">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="firstName"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="secondName">Second Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="secondName"
+              formControlName="secondName"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email </label>
+        <input
+          type="email"
+          class="form-control"
+          id="exampleFormControlInput1"
+          formControlName="email"
+        />
+      </div>
+      <button type="submit" class="btn btn-danger">Create</button>
+    </div>
+    </form>
+  
+  <div class="user-count-container">
+    <h6 class="user-count-container-head" >Users Created</h6>
+    <p class="user-count-container-countnumber" >{{serialNumber}}</p>
+    <button type="button" class="btn btn-warning" (click)="showUSerDataInTable()">Get All users</button>
+  </div>
+</div>
+
+
+<div class="userTable">
+  <table *ngIf="showTheTable" class="table table-bordered ">
+    <thead class="table-txt">
+      <tr>
+        <th scope="col">User Id</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Second Name</th>
+        <th scope="col">email</th>   
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of userData ; let i = index" class="table-txt">
+        <tr>
+          <th scope="row">{{i +1}}</th>
+          <td>{{user.firstName}}</td>
+          <td>{{user.secondName}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+<div>
+<form  [formGroup]="myForm2" 
+        (ngSubmit)="click()" >
+      
+  <div *ngFor="let country of countries">
+  <input type="checkbox"
+        [value]="country"
+        (change)="onCheckboxChange($event)" >
+  <label>{{country}}</label>
+  </div>
+  
+  
+  <button type="submit">Submit</button>
+  </form>
+</div>
+
+<div >
+  <span>"selectedcountries" : {{selectedArray| json}}</span> 
+</div>

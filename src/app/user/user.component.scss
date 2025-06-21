@@ -1,0 +1,61 @@
+.header{
+ width: 100%;
+ background-color:mediumpurple ;
+ height: 100px;
+ text-align: center;
+}
+
+.header-txt{
+ font-size: 45px;   
+ padding: 20px;
+ color: white;
+}
+
+.header-txt-user{
+    font-size: 45px;
+}
+
+.input-container{
+    width: 50%;
+    margin-left: 100px;
+}
+
+.user-count-container{
+    width: 25%;
+    height: 350px;
+    background-color: greenyellow;
+}
+
+.user-count-container-head{
+font-size: 45px;
+}
+
+.wrapper{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.user-count-container-countnumber{
+font-size: 150px;
+text-align: center;
+color: red;
+
+}
+
+.custom-form {
+  margin: 0;
+  padding: 0;
+  border: none;
+  display: contents; /* acts like the form tag doesn't exist for layout */
+}
+
+.userTable{
+    margin: 30px 387px 0px 93px ;
+    padding: 0px 0px;
+}
+
+
+.table-txt{
+    text-align: center;
+}
