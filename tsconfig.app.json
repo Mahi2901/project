@@ -10,7 +10,7 @@
     "enableIvy": true
   },
   "files": [
-    "src/main.ts",
+    "src/main.ts"
   ],
   "include": [
     "src/**/*.ts"
